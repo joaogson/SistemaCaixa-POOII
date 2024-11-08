@@ -16,8 +16,8 @@ public class HelloController {
             new JanelaVerificaPreco();
     }
     @FXML
-    protected void onSobreSistemaButtonClick(){
-
+    protected void onSobreSistemaButtonClick() throws IOException {
+            new JanelaSobre();
     }
     @FXML
     protected void onSairButtonClick(){

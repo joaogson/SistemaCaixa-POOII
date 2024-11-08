@@ -6,11 +6,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class JanelaVerificaPreco extends Stage {
-    public JanelaVerificaPreco() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("verificaPreco-view.fxml"));
+public class JanelaSobre extends Stage{
+
+    public JanelaSobre() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sobre-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 440);
         this.setScene(scene);
         this.show();
     }
 }
+

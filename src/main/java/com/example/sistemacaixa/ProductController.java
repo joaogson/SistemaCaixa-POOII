@@ -4,14 +4,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class ProductController {
 
-    public List<Product> Products = Arrays.asList(
+    protected static List<Product> Products = Arrays.asList(
             new Product("Arroz Branco", 1, 5.99),
             new Product("Feijão Preto", 2, 4.49),
             new Product("Açúcar Cristal", 3, 2.99),
@@ -62,20 +59,24 @@ public class ProductController {
     private Label LabelPreco;
 
     @FXML
-    public void onTextProdutoKeyTyped(){
+    public Product GetProduct(){
         Product product;
-        List<Product> products = Products.stream().filter(x -> x.Codigo == Integer.parseInt(TextProduto.getText())).toList();
-        if(products.stream().count() > 0){
-            product = products.get(0);
+        Optional<Product> aux = Products.stream().filter(x -> x.Codigo == Integer.parseInt(TextProduto.getText())).findFirst();
+
+        if(aux.isPresent()){
+            product = aux.get();
             LabelDescricaoProduto.setText(product.Name);
             LabelPreco.setText(String.valueOf(product.Preco));
         }
         else{
-            LabelDescricaoProduto.setText("");
+            product = null;
             LabelPreco.setText("");
+            LabelDescricaoProduto.setText("");
         }
-
-
+        return product;
     }
+
+
+
 
 }

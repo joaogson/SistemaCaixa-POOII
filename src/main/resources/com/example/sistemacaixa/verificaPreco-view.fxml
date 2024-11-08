@@ -13,7 +13,7 @@
 
     <Label>Verificador de Preço</Label>
     <Label>Código do Produto:</Label>
-    <TextField fx:id="TextProduto" onKeyTyped="#onTextProdutoKeyTyped"/>
+    <TextField fx:id="TextProduto" onKeyTyped="#GetProduct"/>
     <Label>Descrição</Label>
     <Label fx:id="LabelDescricaoProduto"/>
     <Label>Valor:</Label>

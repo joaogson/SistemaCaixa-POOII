@@ -15,19 +15,22 @@
 
     <Label>Caixa de Supermercado</Label>
 
-    <HBox>
+    <HBox spacing="20.0"
+    >
         <Label>Código: </Label>
         <Label>Quantidade: </Label>
     </HBox>
-    <HBox>
-        <TextField fx:id="TextCodigo"/>
-        <TextField fx:id="TextQuantidade"/>
+    <HBox spacing="20.0"
+    >
+        <TextField prefWidth="50.0" fx:id="TextCodigo" onKeyTyped="#GetProduct"/>
+        <TextField prefWidth="50.0" fx:id="TextQuantidade"/>
     </HBox>
+
     <Label fx:id="LabelDescricaoProduto"/>
-    <Button>Adicionar à Lista</Button>
+    <Button fx:id="ButtonAdicionaLista" onMouseClicked="#OnButtonAdicionaListaClicked">Adicionar à Lista</Button>
     <Label>Lista de Produtos:</Label>
-    <ListView></ListView>
-    <Button>Excluir</Button>
+    <ListView fx:id="LabelListaProdutos"></ListView>
+    <Button fx:id="ButtonExluiLista" onMouseClicked="#OnButtonExluiListaClicked">Excluir</Button>
     <HBox>
         <Label>Total:</Label>
         <Label>Valor Pago:</Label>
@@ -35,8 +38,8 @@
     </HBox>
 
     <HBox>
-        <Label/>
-        <Label/>
-        <Label/>
+        <Label fx:id="LabelTotal"/>
+        <Label fx:id="LabelValorPago"/>
+        <Label fx:id="LabelTroco"/>
     </HBox>
 </VBox>

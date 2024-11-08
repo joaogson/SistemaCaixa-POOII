@@ -35,5 +35,12 @@ public class Product {
         return Objects.equals(Name, other.Name) && Codigo == other.Codigo;
     }
 
+    @Override
+    public String toString(){
+        return "Product: " + Name
+                + "Price: " + Preco
+                + "Codigo: " + Codigo;
+    }
+
 
 }
